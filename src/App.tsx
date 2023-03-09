@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import List from "./components/List";
+import AddToList from "./components/AddToList";
+
+
+export interface IPressure {
+  pressure: {
+    up: number;
+    down: number;
+    pulse: number;
+    note?: string;
+  }[];
+}
 
 function App() {
+
+  const [pressure, setPressure] = useState<IPressure["pressure"]>([
+      {
+      up: 138,
+      down: 75,
+      pulse: 68,
+      note: "mierzone rano",
+
+    },
+    {
+      up: 148,
+      down: 95,
+      pulse: 78,
+      note: "mierzone w ciągu dnia",
+
+    },
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My blood pressure control panel</h1>
+      <List pressure={pressure}/>
+      <AddToList pressure={pressure} setPressure={setPressure}></AddToList>
     </div>
   );
 }
