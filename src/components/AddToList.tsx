@@ -1,20 +1,17 @@
 import React, {useState} from "react";    
-import {IPressure as Props} from "../App";  
+import { useDispatch } from "react-redux/es/exports"; 
+import { addTask } from "./Slice";
+import { nanoid } from "@reduxjs/toolkit";
 
-interface IProps {
-    pressure: Props["pressure"]
-     setPressure: React.Dispatch<React.SetStateAction<Props["pressure"]>>
-  }
 
-const AddToList: React.FC<IProps> = ({pressure, setPressure}) => {
-
+const AddToList = () => {
     const [input, setInput] = useState({
         up: undefined,
         down: undefined,
         pulse: undefined,
         note: "",
     })
-
+    const dispatch = useDispatch();
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>  {
 setInput({
     ...input,
@@ -28,15 +25,16 @@ setInput({
        ){
         return
        }
-       setPressure([
-        ...pressure,
-        {
-            up: input.up,
-            down: input.down,
-             pulse: input.pulse,
-            note: input.note,
-        }
-       ])
+dispatch(
+      addTask({
+        key: nanoid(),
+        up: input.up,
+        down: input.down,
+        pulse: input.pulse,
+       note: input.note,
+      })
+    );
+
        setInput({
         up: undefined,
         down: undefined,

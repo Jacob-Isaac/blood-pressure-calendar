@@ -1,15 +1,23 @@
-import React from "react";
-import {IPressure as Props} from "../App";  
+import React from "react"; 
+import { useSelector } from "react-redux/es/exports";
+import { selectTasks} from "./Slice";
+import { nanoid } from "@reduxjs/toolkit";
 
-interface IProps {
-    pressure: Props["pressure"]
+interface Task {
+    key: string;
+    up: number;
+    down: number;
+    pulse: number;
+    note?: string;
   }
-  const List: React.FC<IProps> = ({pressure}) => {
 
+  const List = () => {
+    const pressureList: Task[] = useSelector(selectTasks);
 const renderList = (): JSX.Element[] => {
-    return pressure.map((person) => {
+    return pressureList.map((person) => {
+        const key = nanoid();
         return (
-        <li className="List">
+        <li key={key} className="List">
             <div className="List-header">
                 <h2>{person.up}</h2><h2>/</h2>
                 <h2>{person.down}</h2>
@@ -17,17 +25,17 @@ const renderList = (): JSX.Element[] => {
             <p>{person.pulse}</p>
             <p className="List-note">{person.note}</p>
         </li>
-        )
-    })
-}
+        );
+    });
+};
 
 return (
     <ul>
     {renderList()}
     </ul>
-    )
+    );
 
-}
+};
 
 
 export default List;
