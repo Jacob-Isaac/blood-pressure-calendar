@@ -2,14 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux/es/exports";
 import { selectTasks} from "./Slice";
 import { nanoid } from "@reduxjs/toolkit";
-
-interface Task {
-    id: string;
-    up: number;
-    down: number;
-    pulse: number;
-    note?: string;
-  }
+import { Task } from "./interfaces";
 
   const List = () => {
     const pressureList: Task[] = useSelector(selectTasks);

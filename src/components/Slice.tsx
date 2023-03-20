@@ -1,18 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface Task {
-  id: string,
-  up: number;
-  down: number;
-  pulse: number;
-  note?: string;
-}
-
-interface TaskListState {
-  pressureList: Task[];
-  isTaskHide: boolean;
-  ifLoading: boolean;
-}
+import { Task, TaskListState } from "./interfaces";
 
 const taskListSlice = createSlice({
   name: "taskList",
@@ -34,7 +21,7 @@ const taskListSlice = createSlice({
 
     },],
     isTaskHide: false,
-    ifLoading: false,
+    isLoading: false,
   } as TaskListState,
 
   reducers: {
