@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface Task {
-  key: string,
+  id: string,
   up: number;
   down: number;
   pulse: number;
@@ -18,7 +18,7 @@ const taskListSlice = createSlice({
   name: "taskList",
   initialState: {
     pressureList: [ {
-      key: "1",
+      id: "1",
       up: 138,
       down: 75,
       pulse: 68,
@@ -26,7 +26,7 @@ const taskListSlice = createSlice({
 
     },
     {
-      key: "2",
+      id: "2",
       up: 148,
       down: 95,
       pulse: 78,

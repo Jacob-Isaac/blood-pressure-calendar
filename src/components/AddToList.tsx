@@ -6,6 +6,7 @@ import { nanoid } from "@reduxjs/toolkit";
 
 const AddToList = () => {
     const [input, setInput] = useState({
+        id: undefined,
         up: undefined,
         down: undefined,
         pulse: undefined,
@@ -27,7 +28,7 @@ setInput({
        }
 dispatch(
       addTask({
-        key: nanoid(),
+        id: nanoid(),
         up: input.up,
         down: input.down,
         pulse: input.pulse,
@@ -36,6 +37,7 @@ dispatch(
     );
 
        setInput({
+        id: undefined,
         up: undefined,
         down: undefined,
         pulse: undefined,

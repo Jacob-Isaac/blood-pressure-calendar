@@ -4,7 +4,7 @@ import { selectTasks} from "./Slice";
 import { nanoid } from "@reduxjs/toolkit";
 
 interface Task {
-    key: string;
+    id: string;
     up: number;
     down: number;
     pulse: number;
