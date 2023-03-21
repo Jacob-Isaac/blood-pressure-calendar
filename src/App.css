@@ -1,3 +1,8 @@
+body {
+  background-color: rgb(245, 245, 245);
+}
+
+
 .App {
   text-align: center;
 }
@@ -32,59 +37,80 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-
-
 .List {
+  background-color: white;
+  display: inline-block;
   list-style: none;
   display: flex;
   align-items: center;
-  width: 50rem;
+  width: 25rem;
+  height: 3.5rem;
+  border-radius: 15px;
   margin: 0rem auto;
-  border: 0.1rem solid rgba(0, 0, 0, 0.233);
-  padding: 1rem;
+  box-shadow: 0px 0px 20px rgba(9, 10, 51, 0.02), 0px 16px 20px rgba(9, 10, 51, 0.03);
+  padding: 10px;
   justify-content: space-between;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
-
-.List-header {
+.List-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 30px;
+  margin-left: 10px;
+}
+.List-order {
   display: flex;
   align-items: center;
 }
-
-.List-header h2 {
-  color: rgb(37, 36, 36)
+.List-pressScore {
+  line-height: 110%;
 }
-
+.List-pulseScore {
+  line-height: 110%;
+  margin-left: 1.7rem;
+}
+.List-upperText {
+  font-size: 12px;
+}
+.List-upperPulseText {
+  font-size: 12px;
+  margin-left: 1.4rem;
+}
+.List-middleText {
+  font-size: 20px;
+  font-weight: bold;
+}
+.List-bottomText {
+  font-size: 10px;
+}
+.List-bottomPulseText {
+  font-size: 10px;
+  margin-left: 1rem;
+}
 .List-img {
-  width: 5rem;
+  background-color: green;
+  width: 1.4rem;
   height: 4rem;
-  border-radius: 100%;
-  margin-right: 0.5rem;
-}
-
-.List-note {
-  width: 30%;
-  text-align: left;
+  border-radius: 50rem;
 }
 
 .AddToList {
   display: flex;
   flex-direction: column;
   width: 30rem;
-  margin: 5rem auto
+  margin: 5rem auto;
 }
-
 .AddToList-input {
   padding: 0.5rem;
   font-size: 1rem;
   margin: 0.3rem 0rem
 }
-
 .AddToList-btn {
   padding: 0.5rem;
   cursor: pointer;
@@ -92,4 +118,9 @@
   font-weight: 700;
   color: white;
   border: none
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
 }
