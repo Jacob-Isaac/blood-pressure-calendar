@@ -99,6 +99,30 @@ body {
   height: 4rem;
   border-radius: 50rem;
 }
+.List-img-yellow {
+  background-color: rgb(248, 244, 0);
+  width: 1.4rem;
+  height: 4rem;
+  border-radius: 50rem;
+}
+.List-img-orange {
+  background-color: rgb(248, 132, 0);
+  width: 1.4rem;
+  height: 4rem;
+  border-radius: 50rem;
+}
+.List-img-red {
+  background-color: rgb(248, 0, 0);
+  width: 1.4rem;
+  height: 4rem;
+  border-radius: 50rem;
+}
+.List-img-violet {
+  background-color: rgba(207, 4, 190, 0.932);
+  width: 1.4rem;
+  height: 4rem;
+  border-radius: 50rem;
+}
 
 .AddToList {
   display: flex;

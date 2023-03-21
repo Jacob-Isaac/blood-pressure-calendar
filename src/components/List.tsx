@@ -9,6 +9,12 @@ const List = () => {
   const renderList = (): JSX.Element[] => {
     return pressureList.map((person) => {
       const key = nanoid();
+      let imgClass = "List-img";
+      imgClass = person.up > 160 ? "List-img-violet" :
+           person.up > 150 ? "List-img-red" :
+           person.up > 140 ? "List-img-orange" :
+           person.up > 130 ? "List-img-yellow" :
+           imgClass;
       return (
         <li key={key} className="List">
           <div className="List-order">
@@ -33,7 +39,7 @@ const List = () => {
               <div className="List-bottomPulseText">BPM</div>
             </div>
           </div>
-          <div className="List-img"></div>
+          <div className={imgClass}></div>
           {/* {person.note} */}
         </li>
       );
