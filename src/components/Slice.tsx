@@ -22,12 +22,14 @@ const taskListSlice = createSlice({
     },],
     isTaskHide: false,
     isLoading: false,
+    color: "",
   } as TaskListState,
 
   reducers: {
     addTask: (state, action: PayloadAction<Task>) => {
       state.pressureList.push(action.payload);
     },
+   // setColor: "yellow"    state.color = "yellow";
   },
 });
 
