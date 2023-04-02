@@ -1,6 +1,6 @@
 import { Task } from "./interfaces";
 
-export const usePressureListImageClass = () => {
+export const useColorHook = () => {
     return (person: Task): string => {
       let imgClass: string = "List-img";
       imgClass =

@@ -2,16 +2,16 @@ import { useSelector } from "react-redux/es/exports";
 import { selectTasks } from "./Slice";
 import { nanoid } from "@reduxjs/toolkit";
 import { Task } from "./interfaces";
-import { usePressureListImageClass } from "./classHook";
+import { useColorHook } from "./colorHook";
 
 const List = () => {
   const pressureList: Task[] = useSelector(selectTasks);
-  const getImageClass = usePressureListImageClass();
+  const getColorClass = useColorHook();
 
   const renderList = (): JSX.Element[] => {
     return pressureList.map((person) => {
       const key = nanoid();
-      const imgClass = getImageClass(person);
+      const colorClass = getColorClass(person);
      // zrobic to jednak jako hook , bo z providerem sie nie uda
            // potem klikamy i sa szczegóły i jest dokladnie kolorami co jest za wysoko
       return (
@@ -38,7 +38,7 @@ const List = () => {
               <div className="List-bottomPulseText">BPM</div>
             </div>
           </div>
-          <div className={imgClass}></div>
+          <div className={colorClass}></div>
           {/* {person.note} */}
         </li>
       );
