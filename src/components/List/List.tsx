@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux/es/exports";
-import { selectTasks } from "./Slice";
+import { selectTasks } from "../Slice/Slice";
 import { nanoid } from "@reduxjs/toolkit";
-import { Task } from "./interfaces";
-import { useColorHook } from "./colorHook";
+import { Task } from "../../common/interfaces";
+import { useColorHook } from "../../common/colorHook";
 
 const List = () => {
   const pressureList: Task[] = useSelector(selectTasks);

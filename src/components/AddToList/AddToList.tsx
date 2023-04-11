@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux/es/exports";
-import { addTask } from "./Slice";
+import { addTask } from "../Slice/Slice";
 import { nanoid } from "@reduxjs/toolkit";
 
 const AddToList = () => {
