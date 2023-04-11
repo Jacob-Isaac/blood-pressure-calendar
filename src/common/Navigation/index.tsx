@@ -3,6 +3,7 @@ import {
   NavigationList,
   NavigationLogo,
   NavigationSearcher,
+  NaviLink
 } from "./styled";
 
 function NavigationBar() {
@@ -10,18 +11,17 @@ function NavigationBar() {
     <NavigationBackground>
       <NavigationList>
         {/* <NavigationLogoLink to="/costam"> */}
-          <NavigationLogo>
-            {/* <StyledMovieIcon strokeWidth={3} opacity={1} /> */}
+          <NavigationLogo to="/">
             ֍
           </NavigationLogo>
-          <div>
+          <NaviLink to="/test">
           ֍
+          </NaviLink>
+          <div>
+          ᴓ
           </div>
           <div>
-          ֍
-          </div>
-          <div>
-          ֍
+          ᴓ
           </div>
         {/* </NavigationLogoLink>
         <NavigationLink to="/costam">Cos</NavigationLink>

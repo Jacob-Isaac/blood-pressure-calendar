@@ -35,8 +35,8 @@ function App() {
           {/* <Route path="/" element={<Navigate to="movies" />} />
           <Route path="/movies" element={<Navigate to="1" />} />
           <Route path="/people" element={<Navigate to="1" />} /> */}
-           <Route path="/" element={<Home />} />
-           <Route path="/test" element={<div><List /><AddToList></AddToList></div>} />
+           <Route path="/" element={<Home/>}/>
+           <Route path="/test" element={<><List/><AddToList/></>}/>
           {/* <Route path="/movies/:page" element={<MovieList />} />
           <Route path="/people/:page" element={<PersonList />} />
           <Route path="/movieDetails/:id" element={<MovieDetails />} />

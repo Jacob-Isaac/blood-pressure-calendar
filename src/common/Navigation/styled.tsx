@@ -1,4 +1,4 @@
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 // import MovieIcon from "../../iconComponents/MovieIcon";
 
@@ -80,7 +80,7 @@ export const NavigationList = styled.ul`
 //   }
 // `;
 
-export const NavigationLogo = styled.div`
+export const NavigationLogo = styled(NavLink)`
   font-weight: ${({ theme }) => theme.fontSize.medium};
   font-size: 23px;
   display: flex;
@@ -91,6 +91,10 @@ export const NavigationLogo = styled.div`
     margin-top: 8px;
     height: 17px;
     font-size: 13px;
+  }
+  text-decoration: none;
+  &:hover {
+    transform: scale(1.2);
   }
 `;
 
@@ -133,3 +137,11 @@ export const NavigationSearcher = styled.div`
 //     margin-bottom: 2px;
 //   }
 // `;
+
+export const NaviLink = styled(NavLink)`
+color: #c38a35;
+text-decoration: none;
+&:hover {
+    transform: scale(1.2);
+  }
+`;

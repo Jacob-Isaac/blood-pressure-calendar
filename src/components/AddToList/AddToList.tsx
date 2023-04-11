@@ -67,7 +67,6 @@ const AddToList = () => {
   return (
     <AddToList1>
       <AddToListInput
-      disabled
         type="number"
         step="1"
         min="90"
