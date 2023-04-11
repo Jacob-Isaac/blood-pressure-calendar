@@ -2,8 +2,25 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux/es/exports";
 import { addTask } from "../Slice/Slice";
 import { nanoid } from "@reduxjs/toolkit";
+import { AddToList1,AddToListInput,AddToListTextArea, AddToListBtn  } from "./styled";
 
 const AddToList = () => {
+
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+  //   if (name === "up") {
+  //     if (value >= 90 && value <= 250) {
+  //       setInput((prevInput) => ({ ...prevInput, [name]: value }));
+  //     } else if (value < 90) {
+  //       setInput((prevInput) => ({ ...prevInput, [name]: 90 }));
+  //     } else if (value > 250) {
+  //       setInput((prevInput) => ({ ...prevInput, [name]: 250 }));
+  //     }
+  //   } else {
+  //     setInput((prevInput) => ({ ...prevInput, [name]: value }));
+  //   }
+  // }; hook preventing to type any value
+
   const [input, setInput] = useState({
     id: undefined,
     up: undefined,
@@ -48,48 +65,46 @@ const AddToList = () => {
   };
 
   return (
-    <div className="AddToList">
-      <input
+    <AddToList1>
+      <AddToListInput
+      disabled
         type="number"
+        step="1"
         min="90"
         max="250"
         placeholder="Up"
-        className="AddToList-input"
         value={input.up || ""}
         onChange={handleChange}
         name="up"
         ref={focus}
       />
-      <input
+      <AddToListInput
         type="number"
         min="40"
         max="130"
         placeholder="Down"
-        className="AddToList-input"
         value={input.down || ""}
         onChange={handleChange}
         name="down"
       />
-      <input
+      <AddToListInput
         type="number"
         min="30"
         max="200"
         placeholder="Pulse"
-        className="AddToList-input"
         value={input.pulse || ""}
         onChange={handleChange}
         name="pulse"
       />
-      <textarea
+      <AddToListTextArea
         placeholder="Note"
-        className="AddToList-input"
         onChange={handleChange}
         name="note"
       />
-      <button className="AddToList-btn" onClick={handleClick}>
+      <AddToListBtn onClick={handleClick}>
         Add to List{" "}
-      </button>
-    </div>
+      </AddToListBtn>
+    </AddToList1>
   );
 };
 

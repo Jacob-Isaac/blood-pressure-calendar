@@ -3,6 +3,7 @@ import NavigationBar from "./common/Navigation";
 import Home from "./components/Home/Home";
 import {Logo} from "./styled"
 import List from "./components/List/List";
+import AddToList from "./components/AddToList/AddToList";
 // import NoResult from "./common/NoResult";
 // import List from "./components/List";
 // import AddToList from "./components/AddToList";
@@ -35,7 +36,7 @@ function App() {
           <Route path="/movies" element={<Navigate to="1" />} />
           <Route path="/people" element={<Navigate to="1" />} /> */}
            <Route path="/" element={<Home />} />
-           <Route path="/test" element={<List />} />
+           <Route path="/test" element={<div><List /><AddToList></AddToList></div>} />
           {/* <Route path="/movies/:page" element={<MovieList />} />
           <Route path="/people/:page" element={<PersonList />} />
           <Route path="/movieDetails/:id" element={<MovieDetails />} />

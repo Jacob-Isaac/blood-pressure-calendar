@@ -3,6 +3,7 @@ import { selectTasks } from "../Slice/Slice";
 import { nanoid } from "@reduxjs/toolkit";
 import { Task } from "../../common/interfaces";
 import { useColorHook } from "../../common/colorHook";
+import { Status, Tile, Wrapper, Title,TitleWrapper, IconBlood, PressureResult, UpperText, MiddleText, BottomText, PulseResult, UpperPulseText, MiddlePulseText, PulseWrapper, BottomPulseText} from "./styled";
 
 const List = () => {
   const pressureList: Task[] = useSelector(selectTasks);
@@ -15,32 +16,32 @@ const List = () => {
      // zrobic to jednak jako hook , bo z providerem sie nie uda
            // potem klikamy i sa szczegóły i jest dokladnie kolorami co jest za wysoko
       return (
-        <li key={key} className="List">
-          <div className="List-order">
-            <div className="List-title">
-            <div className="wrapper"><div className="bloodWrapper">🩸</div> Blood Pressure
-            </div></div>
-            <div className="List-pressScore">
-              <div className="List-upperText">Highest</div>
-              <div className="List-middleText">{person.up}</div>
-              <div className="List-bottomText">mmHg</div>
-            </div>
-            <div>/</div>
-            <div className="List-pressScore">
-              <div className="List-upperText">Lowest</div>
-              <div className="List-middleText">{person.down}</div>
-              <div className="List-bottomText">mmHg</div>
-            </div>
-            <div className="List-pulseScore">
-              <div className="List-upperPulseText">Pulse</div>
-              <div className="heartWrapper"><div>❤️</div>
-                <div className="List-middlePulseText">{person.pulse}</div></div>
-              <div className="List-bottomPulseText">BPM</div>
-            </div>
-          </div>
-          <div className={colorClass}></div>
+        <Tile key={key}>
+          <Wrapper>
+            <Title>
+            <TitleWrapper><IconBlood>🩸</IconBlood> Blood Pressure
+            </TitleWrapper></Title>
+            <PressureResult>
+              <UpperText>Highest</UpperText>
+              <MiddleText>{person.up}</MiddleText>
+              <BottomText>mmHg</BottomText>
+            </PressureResult>
+            <p>/</p>
+            <PressureResult>
+              <UpperText>Lowest</UpperText>
+              <MiddleText>{person.down}</MiddleText>
+              <BottomText>mmHg</BottomText>
+            </PressureResult>
+            <PulseResult>
+              <UpperPulseText>Pulse</UpperPulseText>
+              <MiddlePulseText><div>❤️</div>
+                <PulseWrapper>{person.pulse}</PulseWrapper></MiddlePulseText>
+              <BottomPulseText>BPM</BottomPulseText>
+            </PulseResult>
+          </Wrapper>
+          <Status className={colorClass}></Status>
           {/* {person.note} */}
-        </li>
+        </Tile>
       );
     });
   };
