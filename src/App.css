@@ -3,9 +3,10 @@ body {
 }
 
 
-.App {
+/* .App {
   text-align: center;
-}
+  color: red;
+} */
 
 .App-logo {
   height: 40vmin;
@@ -203,4 +204,12 @@ margin-right: 5px;
 .Box {
 margin: 0 0 0 0;
 padding: 0 0 0 0;
+}
+
+.Logo{
+			left:0;
+width: 300px;
+margin-left: 0px;
+margin-top: 5px;
+margin-bottom: 100px;
 }
