@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Task, TaskListState } from "../../common/interfaces";
+import { Task, PressureState } from "../../common/interfaces";
 
-const taskListSlice = createSlice({
-  name: "taskList",
+const pressureSlice = createSlice({
+  name: "pressureList",
   initialState: {
     pressureList: [ {
       id: "1",
@@ -23,20 +23,26 @@ const taskListSlice = createSlice({
     isTaskHide: false,
     isLoading: false,
     color: "",
-  } as TaskListState,
+  } as PressureState,
 
   reducers: {
     addTask: (state, action: PayloadAction<Task>) => {
+      state.isLoading = true;
       state.pressureList.push(action.payload);
+      console.log(state.isLoading);
     },
-   // setColor: "yellow"    state.color = "yellow";
+    setLoading: (state) => {
+      state.isLoading = false;
+      console.log(state.isLoading);
+    },
   },
 });
 
 export const {
   addTask,
-} = taskListSlice.actions;
+  setLoading
+} = pressureSlice.actions;
 
-export const selectTasks = (state: { pressureList: TaskListState }) => state.pressureList.pressureList;
+export const selectPressures = (state: { pressureList: PressureState }) => state.pressureList.pressureList;
 
-export default taskListSlice.reducer;
+export default pressureSlice.reducer;

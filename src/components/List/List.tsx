@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux/es/exports";
-import { selectTasks } from "../Slice/Slice";
+import { selectPressures } from "../Slice/Slice";
 import { nanoid } from "@reduxjs/toolkit";
 import { Task } from "../../common/interfaces";
 import { useColorHook } from "../../common/colorHook";
 import { Status, Tile, Wrapper, Title,TitleWrapper, IconBlood, PressureResult, UpperText, MiddleText, BottomText, PulseResult, UpperPulseText, MiddlePulseText, PulseWrapper, BottomPulseText} from "./styled";
 
 const List = () => {
-  const pressureList: Task[] = useSelector(selectTasks);
+  const pressureList: Task[] = useSelector(selectPressures);
   const getColorClass = useColorHook();
 
   const renderList = (): JSX.Element[] => {

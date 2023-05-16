@@ -35,7 +35,7 @@ export interface Task {
     note?: string;
   }
 
-  export interface TaskListState {
+  export interface PressureState {
     pressureList: Task[];
     isTaskHide: boolean;
     isLoading: boolean;
