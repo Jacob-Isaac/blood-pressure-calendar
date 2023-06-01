@@ -1,15 +1,12 @@
 {
   "files": {
-    "main.css": "/blood-pressure-calendar/static/css/main.01bc7559.css",
-    "main.js": "/blood-pressure-calendar/static/js/main.f0d98fcf.js",
+    "main.js": "/blood-pressure-calendar/static/js/main.8b3d893b.js",
     "static/js/787.89248726.chunk.js": "/blood-pressure-calendar/static/js/787.89248726.chunk.js",
     "index.html": "/blood-pressure-calendar/index.html",
-    "main.01bc7559.css.map": "/blood-pressure-calendar/static/css/main.01bc7559.css.map",
-    "main.f0d98fcf.js.map": "/blood-pressure-calendar/static/js/main.f0d98fcf.js.map",
+    "main.8b3d893b.js.map": "/blood-pressure-calendar/static/js/main.8b3d893b.js.map",
     "787.89248726.chunk.js.map": "/blood-pressure-calendar/static/js/787.89248726.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.01bc7559.css",
-    "static/js/main.f0d98fcf.js"
+    "static/js/main.8b3d893b.js"
   ]
 }
