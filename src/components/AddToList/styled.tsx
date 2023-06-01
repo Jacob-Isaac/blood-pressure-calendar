@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-  export const AddToList1 = styled.div`
+  export const AddToList1 = styled.form`
     display: flex;
     flex-direction: column;
     width: 30rem;
