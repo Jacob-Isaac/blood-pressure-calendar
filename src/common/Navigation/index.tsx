@@ -12,16 +12,17 @@ function NavigationBar() {
       <NavigationList>
         {/* <NavigationLogoLink to="/costam"> */}
           <NavigationLogo to="/">
-            ֍
+            sum
+            mary
           </NavigationLogo>
           <NaviLink to="/test">
-          ֍
+         home
           </NaviLink>
           <div>
-          ᴓ
+          calendar
           </div>
           <div>
-          ᴓ
+          key information
           </div>
         {/* </NavigationLogoLink>
         <NavigationLink to="/costam">Cos</NavigationLink>
