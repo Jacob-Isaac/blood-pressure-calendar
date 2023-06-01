@@ -28,18 +28,22 @@ const AddToList = () => {
     pulse: undefined,
     note: "",
   });
+
   const dispatch = useDispatch();
   const focus = React.useRef<HTMLInputElement>(null);
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    const { name, value } = e.target;
+  
     setInput({
       ...input,
-      [e.target.name]: e.target.value,
+      [name]: name === "note" ? value : parseFloat(value),
     });
   };
 
-  const handleClick = (): void => {
+  const onFormSubmit = (event: any) => {
+    event.preventDefault();
     if (!input.up || !input.down || !input.pulse) {
       return;
     }
@@ -63,9 +67,8 @@ const AddToList = () => {
       focus.current.focus();
     }
   };
-
   return (
-    <AddToList1>
+    <AddToList1 onSubmit={onFormSubmit}>
       <AddToListInput
         type="number"
         step="1"
@@ -76,6 +79,7 @@ const AddToList = () => {
         onChange={handleChange}
         name="up"
         ref={focus}
+   required
       />
       <AddToListInput
         type="number"
@@ -85,6 +89,7 @@ const AddToList = () => {
         value={input.down || ""}
         onChange={handleChange}
         name="down"
+        required
       />
       <AddToListInput
         type="number"
@@ -94,13 +99,14 @@ const AddToList = () => {
         value={input.pulse || ""}
         onChange={handleChange}
         name="pulse"
+        required
       />
       <AddToListTextArea
         placeholder="Note"
         onChange={handleChange}
         name="note"
       />
-      <AddToListBtn onClick={handleClick}>
+      <AddToListBtn>
         Add to List{" "}
       </AddToListBtn>
     </AddToList1>
