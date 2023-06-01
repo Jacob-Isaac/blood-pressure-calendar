@@ -37,6 +37,10 @@ export interface Task {
 
   export interface PressureState {
     pressureList: Task[];
+    highestPressure: Task[];
+    averagePressure: Task[];
+    lowestPressure: Task[];
     isTaskHide: boolean;
     isLoading: boolean;
+    color: string;
   }
