@@ -10,15 +10,12 @@ margin-left: 300px;
 `;
 export const Div1 = styled.div`
   cursor: pointer;
-  background-color: rgb(255, 255, 255);
-  list-style: none;
-  align-items: center;
-  width: 25rem;
+   align-items: center;
+  justify-content: space-between; 
   height: 3.5rem;
+  width: 25rem;
   border-radius: 15px;
-  box-shadow: 0px 0px 20px rgba(9, 10, 51, 0.02), 0px 16px 20px rgba(9, 10, 51, 0.03);
   padding: 10px;
-  justify-content: space-between;
   transition: all 0.2s ease 0s;
 grid-area: 2 / 1 / 4 / 2;
 `;
