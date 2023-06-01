@@ -20,6 +20,9 @@ const pressureSlice = createSlice({
       note: "mierzone w ciągu dnia",
 
     },],
+    highestPressure: [],
+    averagePressure: [],
+    lowestPressure: [],
     isTaskHide: false,
     isLoading: false,
     color: "",
@@ -30,9 +33,15 @@ const pressureSlice = createSlice({
       state.isLoading = true;
       state.pressureList.push(action.payload);
       console.log(state.isLoading);
+      console.log(state.pressureList);
     },
     setLoading: (state) => {
       state.isLoading = false;
+      console.log(state.isLoading);
+    },
+    showHighest: (state, action: PayloadAction<Task>) => {
+      state.highestPressure.push(action.payload);
+      state.highestPressure = [action.payload];
       console.log(state.isLoading);
     },
   },
@@ -40,9 +49,13 @@ const pressureSlice = createSlice({
 
 export const {
   addTask,
-  setLoading
+  setLoading,
+  showHighest
 } = pressureSlice.actions;
 
 export const selectPressures = (state: { pressureList: PressureState }) => state.pressureList.pressureList;
-
+export const selectHighest = (state: { pressureList: PressureState }) => state.pressureList.highestPressure;
+export const selectAverage = (state: { averagePressure: PressureState }) => state.averagePressure;
+export const selectLowest = (state: { lowestPressure: PressureState }) => state.lowestPressure;
 export default pressureSlice.reducer;
+
