@@ -43,4 +43,5 @@ export interface Task {
     isTaskHide: boolean;
     isLoading: boolean;
     color: string;
+    arrayType: string;
   }

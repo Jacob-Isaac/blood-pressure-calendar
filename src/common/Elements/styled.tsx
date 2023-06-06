@@ -113,10 +113,9 @@ export const MiddlePulseText = styled.div`
 export const PulseWrapper = styled.div`
   font-size: 20px;
   font-weight: bold;
-  margin-left:5px;
+  margin-left: 5px;
 `;
 export const BottomPulseText = styled.div`
   font-size: 10px;
   margin-left: 1.3rem;
 `;
-

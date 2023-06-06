@@ -26,6 +26,7 @@ const pressureSlice = createSlice({
     isTaskHide: false,
     isLoading: false,
     color: "",
+    arrayType: "",
   } as PressureState,
 
   reducers: {
@@ -43,6 +44,19 @@ const pressureSlice = createSlice({
       state.highestPressure.push(action.payload);
       state.highestPressure = [action.payload];
       console.log(state.isLoading);
+      state.arrayType = "highestPressure";
+    },
+    showAverage: (state, action: PayloadAction<Task>) => {
+      state.averagePressure.push(action.payload);
+      state.averagePressure = [action.payload];
+      console.log(state.isLoading);
+      state.arrayType = "highestPressure";
+    },
+    showLowest: (state, action: PayloadAction<Task>) => {
+      state.lowestPressure.push(action.payload);
+      state.lowestPressure = [action.payload];
+      console.log(state.isLoading);
+      state.arrayType = "highestPressure";
     },
   },
 });
@@ -50,12 +64,15 @@ const pressureSlice = createSlice({
 export const {
   addTask,
   setLoading,
-  showHighest
+  showHighest,
+  showAverage,
+  showLowest,
 } = pressureSlice.actions;
 
 export const selectPressures = (state: { pressureList: PressureState }) => state.pressureList.pressureList;
 export const selectHighest = (state: { pressureList: PressureState }) => state.pressureList.highestPressure;
-export const selectAverage = (state: { averagePressure: PressureState }) => state.averagePressure;
-export const selectLowest = (state: { lowestPressure: PressureState }) => state.lowestPressure;
+export const selectAverage = (state: { pressureList: PressureState }) => state.pressureList.averagePressure;
+export const selectLowest = (state: { pressureList: PressureState }) => state.pressureList.lowestPressure;
+export const arrayType = "";
 export default pressureSlice.reducer;
 

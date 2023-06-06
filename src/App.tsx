@@ -2,7 +2,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import NavigationBar from "./common/Navigation";
 import Home from "./components/Home/Home";
 import {Logo} from "./styled"
-import List from "./components/List/List";
+import {List} from "./components/List/List";
 import AddToList from "./components/AddToList/AddToList";
 // import NoResult from "./common/NoResult";
 // import List from "./components/List";

@@ -1,70 +1,36 @@
-import { useSelector } from "react-redux/es/exports";
-import { selectPressures } from "../Slice/Slice";
+import { useSelector } from "react-redux";
+import { selectPressures, selectAverage, selectHighest, selectLowest } from "../Slice/Slice";
 import { nanoid } from "@reduxjs/toolkit";
 import { Task } from "../../common/interfaces";
-import { useColorHook } from "../../common/colorHook";
-import { Status, Tile, Wrapper, Title,TitleWrapper, IconBlood, PressureResult, UpperText, MiddleText, BottomText, PulseResult, UpperPulseText, MiddlePulseText, PulseWrapper, BottomPulseText} from "./styled";
+import PressureTile from "../../common/Elements/pressureTile";
 
+const PressureList = ({ selectFunction }: { selectFunction: any}) => {
+  const pressureData: Task[] = useSelector(selectFunction);
+
+  return (
+    <div>
+      <ul className="Box">
+        {pressureData.map((person) => (
+          <PressureTile key={nanoid()} person={person} />
+        ))}
+      </ul>
+    </div>
+  );
+};
 const List = () => {
-  const pressureList: Task[] = useSelector(selectPressures);
-  const getColorClass = useColorHook();
-
-  const renderList = (): JSX.Element[] => {
-    return pressureList.map((person) => {
-      const key = nanoid();
-      const colorClass = getColorClass(person);
-     // zrobic to jednak jako hook , bo z providerem sie nie uda
-           // potem klikamy i sa szczegóły i jest dokladnie kolorami co jest za wysoko
-      return (
-        <Tile key={key}>
-          <Wrapper>
-            <Title>
-            <TitleWrapper><IconBlood>🩸</IconBlood> Blood Pressure
-            </TitleWrapper></Title>
-            <PressureResult>
-              <UpperText>Highest</UpperText>
-              <MiddleText>{person.up}</MiddleText>
-              <BottomText>mmHg</BottomText>
-            </PressureResult>
-            <p>/</p>
-            <PressureResult>
-              <UpperText>Lowest</UpperText>
-              <MiddleText>{person.down}</MiddleText>
-              <BottomText>mmHg</BottomText>
-            </PressureResult>
-            <PulseResult>
-              <UpperPulseText>Pulse</UpperPulseText>
-              <MiddlePulseText><div>❤️</div>
-                <PulseWrapper>{person.pulse}</PulseWrapper></MiddlePulseText>
-              <BottomPulseText>BPM</BottomPulseText>
-            </PulseResult>
-          </Wrapper>
-          <Status className={colorClass}></Status>
-          {/* {person.note} */}
-        </Tile>
-      );
-    });
-  };
-
-   return <ul className="Box">{renderList()}</ul>;
+  return <PressureList selectFunction={selectPressures}/>;
 };
 
-export default List;
+const ListAverage = () => {
+  return <PressureList selectFunction={selectAverage}/>;
+};
 
+const ListHighest = () => {
+  return <PressureList selectFunction={selectHighest} />;
+};
 
-// javascript
-// const rangeClasses = {
-//   "190,150,150": "List-img-violet",
-//   "170,120,120": "List-img-red",
-//   "160,100,100": "List-img-orange",
-//   "150,90,90": "List-img-papaya",
-//   "140,80,80": "List-img-yellow",
-//   "130,70,70": "List-img-green",
-// };
-// typescript
-// const getRangeClass = (up: number, down: number, pulse: number): string => {
-//   const rangeKey = `${up},${down},${pulse}`;
-//   return rangeClasses[rangeKey] ?? "List-img";
-// };
-// scss
-// const imgClass = getRangeClass(person.up, person.down, person.pulse);
+const ListLowest = () => {
+  return <PressureList selectFunction={selectLowest} />;
+};
+
+export { List, ListAverage, ListHighest, ListLowest };

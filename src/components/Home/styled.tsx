@@ -20,36 +20,24 @@ export const Div1 = styled.div`
 grid-area: 2 / 1 / 4 / 2;
 `;
 export const Div2= styled.div`
-  cursor: pointer;
-  background-color: rgb(255, 255, 255);
-  display: inline-block;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  width: 25rem;
+   cursor: pointer;
+   align-items: center;
+  justify-content: space-between; 
   height: 3.5rem;
+  width: 25rem;
   border-radius: 15px;
-
-  box-shadow: 0px 0px 20px rgba(9, 10, 51, 0.02), 0px 16px 20px rgba(9, 10, 51, 0.03);
   padding: 10px;
-  justify-content: space-between;
-
   transition: all 0.2s ease 0s;
 grid-area: 5 / 1 / 7 / 2;
 `;
 export const Div3 = styled.div`
   cursor: pointer;
-  background-color: rgb(255, 255, 255);
-  display: inline-block;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  width: 25rem;
+   align-items: center;
+  justify-content: space-between; 
   height: 3.5rem;
+  width: 25rem;
   border-radius: 15px;
-  box-shadow: 0px 0px 20px rgba(9, 10, 51, 0.02), 0px 16px 20px rgba(9, 10, 51, 0.03);
   padding: 10px;
-  justify-content: space-between;
   transition: all 0.2s ease 0s;
 grid-area: 8 / 1 / 10 / 2;
 `;
