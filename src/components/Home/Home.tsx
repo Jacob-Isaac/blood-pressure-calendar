@@ -1,16 +1,16 @@
-import { Div, Div1, Div2, Div3, Div4 } from "./styled";
-import {ListHighest, ListAverage, ListLowest} from "../List/List";
+import { Div, Div1, Div2, Div3, Div4, StyledGlobe } from "./styled";
+import { ListHighest, ListAverage, ListLowest } from "../List/List";
 import { Task } from "../../common/interfaces";
-import { useSelector } from "react-redux/es/exports";
-import { selectPressures } from "../Slice/Slice";
-import { useDispatch } from "react-redux/es/exports";
-import { useEffect } from "react";
-import { showHighest, showAverage, showLowest } from "../Slice/Slice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectPressures, showHighest, showAverage, showLowest } from "../Slice/Slice";
+import { useEffect, useState } from "react";
 import {
   useCalculateAverage,
   useFindMaxUp,
   useFindMinUp,
 } from "../../common/Hooks/summaryHooks";
+import "react-calendar/dist/Calendar.css";
+
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -18,6 +18,7 @@ const Home = () => {
   const averageObj = useCalculateAverage(pressureList);
   const highestObj = useFindMaxUp(pressureList);
   const lowestObj = useFindMinUp(pressureList);
+  
 
   useEffect(() => {
     if (highestObj) {
@@ -37,6 +38,11 @@ const Home = () => {
     }
   }, [pressureList, dispatch]);
 
+  const handleCalendarChange = (date: Date) => {
+    onChange(date);
+  };
+  const [value, onChange] = useState<Date>(new Date());
+
   return (
     <Div>
       <h1>SUMMARY</h1>
@@ -52,9 +58,7 @@ const Home = () => {
         30-day lowest
         <ListLowest />
       </Div3>
-      <Div4>
-        <p>30-day termomether</p>4
-      </Div4>
+      <Div4><StyledGlobe/></Div4>
     </Div>
   );
 };

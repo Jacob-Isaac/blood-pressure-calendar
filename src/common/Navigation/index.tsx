@@ -18,9 +18,9 @@ function NavigationBar() {
           <NaviLink to="/test">
          home
           </NaviLink>
-          <div>
-          calendar
-          </div>
+          <NaviLink to="/calendar">
+         calendar
+          </NaviLink>
           <div>
           key information
           </div>
