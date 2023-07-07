@@ -1,6 +1,6 @@
 import { Task } from "../../common/interfaces";
 
-export const useCalculateAverage = (data: Task[]): Task | undefined => {
+export const useCalculateAverage = (data: Task[]): Task => {
   const totalObjects = data.length;
   const totalUp = data.reduce((sum, obj) => sum + obj.up, 0);
   const totalDown = data.reduce((sum, obj) => sum + obj.down, 0);

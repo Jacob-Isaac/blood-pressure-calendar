@@ -10,6 +10,10 @@ import {
   useFindMinUp,
 } from "../../common/Hooks/summaryHooks";
 import "react-calendar/dist/Calendar.css";
+import WebGL2Checker from "../../common/Hooks/webGL2Hook";
+import { useModelHook } from "../../common/Hooks/modelHook";
+import Globe from "../../common/Elements/Thermometer";
+
 
 
 const Home = () => {
@@ -18,6 +22,7 @@ const Home = () => {
   const averageObj = useCalculateAverage(pressureList);
   const highestObj = useFindMaxUp(pressureList);
   const lowestObj = useFindMinUp(pressureList);
+  const model = useModelHook();
   
 
   useEffect(() => {
@@ -29,6 +34,7 @@ const Home = () => {
   useEffect(() => {
     if (averageObj) {
       dispatch(showAverage(averageObj));
+      model(averageObj);
     }
   }, [pressureList, dispatch]);
 
@@ -42,7 +48,7 @@ const Home = () => {
     onChange(date);
   };
   const [value, onChange] = useState<Date>(new Date());
-
+  
   return (
     <Div>
       <h1>SUMMARY</h1>
@@ -58,7 +64,10 @@ const Home = () => {
         30-day lowest
         <ListLowest />
       </Div3>
-      <Div4><StyledGlobe/></Div4>
+      <Div4>
+        {/* <StyledGlobe/> */}
+      <StyledGlobe color={model(averageObj)}/></Div4>
+      <WebGL2Checker />
     </Div>
   );
 };

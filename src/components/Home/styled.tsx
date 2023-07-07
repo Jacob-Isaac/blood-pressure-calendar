@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Globe from "../../common/Elements/Thermometer";
+ import Globe from "../../common/Elements/Thermometer/index";
 
 export const Div = styled.div`
 display: grid;
@@ -46,7 +46,8 @@ export const Div4 = styled.div`
 grid-area: 2 / 2 / 11 / 3;
 margin-bottom: 20px;
 margin-top: -30px;
-`;
-export const StyledGlobe = styled(Globe)`
 cursor: pointer;
 `;
+ export const StyledGlobe = styled(Globe)`
+
+ `;
