@@ -1,16 +1,23 @@
 {
   "files": {
     "main.css": "/blood-pressure-calendar/static/css/main.f64ec082.css",
-    "main.js": "/blood-pressure-calendar/static/js/main.80618c7c.js",
+    "main.js": "/blood-pressure-calendar/static/js/main.fed1b62a.js",
     "static/js/787.89248726.chunk.js": "/blood-pressure-calendar/static/js/787.89248726.chunk.js",
-    "static/media/Thermometerr.gltf": "/blood-pressure-calendar/static/media/Thermometerr.e49c38de9a71185003b5.gltf",
+    "static/media/ThermGreen.gltf": "/blood-pressure-calendar/static/media/ThermGreen.a1371bc62f2dc6d47a6d.gltf",
+    "static/media/ThermometerFull.gltf": "/blood-pressure-calendar/static/media/ThermometerFull.dde6c201e59668b1f51f.gltf",
+    "static/media/ThermLime.gltf": "/blood-pressure-calendar/static/media/ThermLime.fa4ef60ec779aacf5d2f.gltf",
+    "static/media/ThermYellow.gltf": "/blood-pressure-calendar/static/media/ThermYellow.b5f5dde008945cd3ab63.gltf",
+    "static/media/ThermOrange.gltf": "/blood-pressure-calendar/static/media/ThermOrange.3c16d691f687bb7cbf02.gltf",
+    "static/media/ThermPapaya.gltf": "/blood-pressure-calendar/static/media/ThermPapaya.9916fcef57a0e088ac54.gltf",
+    "static/media/ThermRed.gltf": "/blood-pressure-calendar/static/media/ThermRed.7f121e34043ca651ace1.gltf",
+    "static/media/ThermViolet.gltf": "/blood-pressure-calendar/static/media/ThermViolet.3fdd5c0caeee6bc21e01.gltf",
     "index.html": "/blood-pressure-calendar/index.html",
     "main.f64ec082.css.map": "/blood-pressure-calendar/static/css/main.f64ec082.css.map",
-    "main.80618c7c.js.map": "/blood-pressure-calendar/static/js/main.80618c7c.js.map",
+    "main.fed1b62a.js.map": "/blood-pressure-calendar/static/js/main.fed1b62a.js.map",
     "787.89248726.chunk.js.map": "/blood-pressure-calendar/static/js/787.89248726.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f64ec082.css",
-    "static/js/main.80618c7c.js"
+    "static/js/main.fed1b62a.js"
   ]
 }
