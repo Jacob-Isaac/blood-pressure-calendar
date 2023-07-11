@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 15px;
     border-radius: 10px;
     border: none;
-    background-color: #141414;
+    background-color: #444444;
     box-sizing: border-box;
     transition: transfer 0.3s;
   }

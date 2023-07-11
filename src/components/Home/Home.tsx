@@ -13,6 +13,8 @@ import "react-calendar/dist/Calendar.css";
 import WebGL2Checker from "../../common/Hooks/webGL2Hook";
 import { useModelHook } from "../../common/Hooks/modelHook";
 import Globe from "../../common/Elements/Thermometer";
+import { useHotpointHook } from "../../common/Hooks/positionHook";
+import { useAnnotationHook } from "../../common/Hooks/annotationHook";
 
 
 
@@ -23,6 +25,8 @@ const Home = () => {
   const highestObj = useFindMaxUp(pressureList);
   const lowestObj = useFindMinUp(pressureList);
   const model = useModelHook();
+  const position = useHotpointHook(); 
+  const annotation = useAnnotationHook();
   
 
   useEffect(() => {
@@ -34,7 +38,6 @@ const Home = () => {
   useEffect(() => {
     if (averageObj) {
       dispatch(showAverage(averageObj));
-      model(averageObj);
     }
   }, [pressureList, dispatch]);
 
@@ -66,7 +69,7 @@ const Home = () => {
       </Div3>
       <Div4>
         {/* <StyledGlobe/> */}
-      <StyledGlobe color={model(averageObj)}/></Div4>
+      <StyledGlobe color={model(averageObj)} position={position(averageObj)} annotation={annotation(averageObj)}/></Div4>
       <WebGL2Checker />
     </Div>
   );

@@ -8,13 +8,10 @@ import thermPapaya from "../images/ThermPapaya.gltf";
 import thermRed from "../images/ThermRed.gltf";
 import thermViolet from "../images/ThermViolet.gltf";
 
-const asdfasd = 121;
 
 export const useModelHook = () => {
   return (person: Task): any => {
     let color: any = thermometerFull;
-    let position: string = "0.04388671956896403m 1.548502198510652m 0.10592409502714872m";
-    let annotation: string = "1- Your average 30-day pressure is above 190/90/60, you need immediately contact to the doctor!"
     color =
       person.up >= 190 || person.down >= 130 || person.pulse >= 150
         ? thermViolet
@@ -34,4 +31,6 @@ export const useModelHook = () => {
     return color;
   };
 };
+
+
 
