@@ -5,6 +5,7 @@ import {Logo} from "./styled"
 import {List} from "./components/List/List";
 import AddToList from "./components/AddToList/AddToList";
 import PressureCalendar from "./components/Calendar/Calendar";
+import KeyInfo from "./components/KeyInfo/KeyInfo";
 // import NoResult from "./common/NoResult";
 // import List from "./components/List";
 // import AddToList from "./components/AddToList";
@@ -39,6 +40,7 @@ function App() {
            <Route path="/" element={<Home/>}/>
            <Route path="/test" element={<><List/><AddToList/></>}/>
            <Route path="/calendar" element={<PressureCalendar/>}/>
+           <Route path="/keyInfo" element={<KeyInfo/>}/>
           {/* <Route path="/movies/:page" element={<MovieList />} />
           <Route path="/people/:page" element={<PersonList />} />
           <Route path="/movieDetails/:id" element={<MovieDetails />} />

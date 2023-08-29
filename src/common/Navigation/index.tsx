@@ -21,9 +21,9 @@ function NavigationBar() {
           <NaviLink to="/calendar">
          calendar
           </NaviLink>
-          <div>
+          <NaviLink to="/keyInfo">
           key information
-          </div>
+          </NaviLink>
         {/* </NavigationLogoLink>
         <NavigationLink to="/costam">Cos</NavigationLink>
         <NavigationLink to="/costam">Costanm</NavigationLink> */}

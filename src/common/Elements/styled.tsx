@@ -119,3 +119,9 @@ export const BottomPulseText = styled.div`
   font-size: 10px;
   margin-left: 1.3rem;
 `;
+
+export const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
