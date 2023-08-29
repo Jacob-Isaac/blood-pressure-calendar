@@ -20,7 +20,7 @@ export const Div1 = styled.div`
   transition: all 0.2s ease 0s;
 grid-area: 2 / 1 / 4 / 2;
 `;
-export const Div2= styled.div`
+export const Div2= styled.div<{disabled: boolean}>`
    cursor: pointer;
    align-items: center;
   justify-content: space-between; 
@@ -50,4 +50,4 @@ cursor: pointer;
 `;
  export const StyledGlobe = styled(Globe)`
 
- `;
+`;

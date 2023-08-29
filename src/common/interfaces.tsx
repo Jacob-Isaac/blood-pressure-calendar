@@ -33,6 +33,7 @@ export interface Task {
     down: number;
     pulse: number;
     note?: string;
+    date: Date;
   }
 
   export interface PressureState {
@@ -45,3 +46,4 @@ export interface Task {
     color: string;
     arrayType: string;
   }
+

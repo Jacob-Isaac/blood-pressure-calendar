@@ -27,6 +27,7 @@ const AddToList = () => {
     down: undefined,
     pulse: undefined,
     note: "",
+    date: undefined,
   });
 
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ const AddToList = () => {
         down: input.down,
         pulse: input.pulse,
         note: input.note,
+        date: new Date(),
       })
     );
     setInput({
@@ -62,6 +64,7 @@ const AddToList = () => {
       down: undefined,
       pulse: undefined,
       note: "",
+      date: undefined,
     });
     if (focus.current) {
       focus.current.focus();

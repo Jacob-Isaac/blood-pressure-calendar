@@ -59,7 +59,7 @@ const Home = () => {
         30-day highest
         <ListHighest />
       </Div1>
-      <Div2>
+      <Div2 disabled>
         30-day average
         <ListAverage />
       </Div2>

@@ -10,7 +10,7 @@ const pressureSlice = createSlice({
       down: 75,
       pulse: 68,
       note: "mierzone rano",
-
+      date: new Date(),
     },
     {
       id: "2",
@@ -18,7 +18,15 @@ const pressureSlice = createSlice({
       down: 95,
       pulse: 78,
       note: "mierzone w ciągu dnia",
-
+      date: new Date(),
+    },
+    {
+      id: "3",
+      up: 128,
+      down: 94,
+      pulse: 87,
+      note: "mierzone w ciągu dnia",
+      date: new Date('1988-03-21'),
     },],
     highestPressure: [],
     averagePressure: [],
